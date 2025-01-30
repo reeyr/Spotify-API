@@ -1,7 +1,9 @@
 1. Flask로 HTML 웹 구성하기
    - return_template 이용하기: .html 파일을 text 형태로 반환해줌
+     
      (1) from flask import Flask, render_template
          app = Flask(_name_)
+     
      (2) templates 폴더 추가:
      render_template을 사용할 모든 파일은 templates 폴더 내에 존재해야 함
      *폴더 경로 확인
