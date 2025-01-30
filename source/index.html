@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Artist Search</title>
+    <script>
+        async function searchArtist() {
+            let artistName = document.getElementById("artistName").value;
+            if (!artistName) {
+                alert("아티스트 이름을 입력해주세요.");
+                return;
+            }
+
+            let response = await fetch(`/search?artist=${encodeURIComponent(artistName)}`);
+            let data = await response.json();
+
+            let resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = "";
+
+            if (data.error) {
+                resultDiv.innerHTML = `<p>${data.error}</p>`;
+                return;
+            }
+
+            let artistInfo = `<h2>${data.artist_name}</h2>`;
+            if (data.artist_image) {
+                artistInfo += `<img src="${data.artist_image}" width="200px"><br>`;
+            }
+            resultDiv.innerHTML = artistInfo;
+
+            let tracksList = "<h3>Top Songs</h3><ul>";
+            data.tracks.forEach(track => {
+                tracksList += `<li>${track.name}`;
+                if (track.preview_url) {
+                    tracksList += ` <a href="${track.preview_url}" target="_blank">🎵 Preview</a>`;
+                }
+                tracksList += `</li>`;
+            });
+            tracksList += "</ul>";
+            resultDiv.innerHTML += tracksList;
+        }
+    </script>
+</head>
+<body>
+    <h1>Spotify 아티스트 검색</h1>
+    <input type="text" id="artistName" placeholder="아티스트 이름 입력">
+    <button onclick="searchArtist()">검색</button>
+    <div id="result"></div>
+</body>
+</html>
