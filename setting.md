@@ -9,14 +9,19 @@
      
      *폴더 경로 확인
       SPOTIFY API/
+     
       │── app.py  (Flask 실행 파일)
+     
       │── .env
+     
       │── templates/
+     
       │   ├── index.htm
 
    - HTML 파일 연결
      (1) app.route():
      바로 아래 함수가 리턴하는 문장 그대로 HTML 형식으로 변환됨
+     
      (html 파일 -> text 형태 변환 = render_template)
      
      ex)
