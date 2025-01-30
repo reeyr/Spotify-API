@@ -17,6 +17,7 @@
       │── templates/
      
       │   ├── index.htm
+     
 
    - HTML 파일 연결
      (1) app.route():
@@ -28,12 +29,15 @@
      @app.route("/")
      def hello_world():
          return render_template('index.html')
+     
      --> render_template() 사용
      
      @app.route("/")
      def hello_world():
-         return "<p> Hello, World!</p>"
-     --> <p>로 문장 그대로 출력
+         return "p> Hello, World!</p"
+     
+     --> p>태그로 문장 그대로 출력
+     
 
 2. Flask 서버 연결
    (1) cmd에서 프로젝트 폴더로 이동:
