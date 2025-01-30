@@ -1,5 +1,5 @@
-1. Flask로 HTML 웹 구성하기
-   - return_template 이용하기: .html 파일을 text 형태로 반환해줌
+# Flask로 HTML 웹 구성하기
+## return_template 이용하기: .html 파일을 text 형태로 반환해줌
      
      (1) from flask import Flask, render_template
          app = Flask(_name_)
@@ -19,7 +19,7 @@
       │   ├── index.htm
      
 
-   - HTML 파일 연결
+## HTML 파일 연결
      (1) app.route():
      바로 아래 함수가 리턴하는 문장 그대로 HTML 형식으로 변환됨
      
@@ -38,8 +38,7 @@
      
      --> p>태그로 문장 그대로 출력
      
-
-2. Flask 서버 연결
+# Flask 서버 연결
    (1) cmd에서 프로젝트 폴더로 이동:
    cmd > cd "프로젝트 폴더 경로" (py 파일이 있는 곳)
    
