@@ -1,3 +1,4 @@
 #환경 설정 파일
 .env
-git rm --cached .env
+.env.CLIENT_ID
+.env.CLIENT_SECRET
